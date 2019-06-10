@@ -1,0 +1,86 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Neighborhood Analysis Mapper</title>
+	
+	<script src="data/GEO_CONFIG.js"></script>
+	<script src="data/GEO_JSON.js"></script>
+	<script src="data/GEO_VARIABLES.js"></script>
+	
+	<script src="lib/jQuery/jquery-3.3.1.js"></script>
+	<script src="lib/d3/d3.min.js"></script>
+	<script src="lib/moment/moment.min.js"></script>
+	<script src="lib/geostats/geostats.min.js"></script>
+	<script src="lib/simple-statistics@6.0.0/simple-statistics.min.js"></script>
+	<link rel="stylesheet" href="lib/leaflet/leaflet.css" />
+	<!--link rel="stylesheet" href="leaflet-loader-master/example/example.css" /-->
+	<!--link rel="stylesheet" href="leaflet-loader-master/dist/leaflet.loader.css" /-->
+	<script src="lib/leaflet/leaflet.js"></script>
+	<!--script src="leaflet-loader-master/dist/leaflet.loader.js"></script-->
+	<!--script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script-->
+	<script src="lib/sweetalert/sweetalert.min.js"></script>
+	<!--link rel="stylesheet" href="dist/leaflet.css" /-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="../../dist/leaflet.ie.css" /><![endif]-->
+	<!--link rel="stylesheet" href="css/screen.css" /-->
+	<script src="lib/plotly.js v1.39.4/plotly.min.js"></script>
+	<script type="text/javascript" src="lib/pyextjs-0.1.2/package/dist/ss.js"></script>
+	<script type="text/javascript" src="lib/pyextjs-0.1.2/package/dist/Numpy.js"></script>
+	<script type="text/javascript" src="lib/pyextjs-0.1.2/package/dist/PolySolve.js"></script>
+	<script type="text/javascript" src="lib/pyextjs-0.1.2/package/dist/Scipy.js"></script>
+	<script type="text/javascript" src="lib/science.js-master/science.v1.min.js"></script>
+	
+	<link rel="stylesheet" href="css/Neighborhood_Analysis_Mapper.css" />
+	<script src="lib/Neighborhood_Analysis_Mapper.js"></script>
+</head>
+
+
+<body>
+
+	<header>
+		<h1>Neighborhood Analysis Mapper</h1>		
+	</header>
+	
+	<!--div class='backLayer' style=''></div-->
+	
+	
+	
+	<br>
+	<section>
+	<!--div style="height:40px;background-color:transparent; width:1270px;"-->
+	<div style="height:40px;background-color:transparent; width:700px;">
+		<button type="submit" id="submitForm" style="margin:10px 10px 10px 0px; float:left">Submit for Neighborhood Analysis</button>
+		<button type="submit" id="initFiveMaps" style="margin:10px 10px 10px 0px; float:left" hidden>Initialize all maps</button>
+		<div id="global-selection" style="margin:5px 0px 5px 30px; float:left; height:30px; border: 1px solid #99CCFF; border-radius: 5px;" hidden>
+			<!--div id="global_selection" style="margin:3px 10px 2px 40px; font-weight:bold; float:left">Global Selection</div-->
+			<div id="global_year" style="margin:3px 0px 0px 20px; float:left"></div>
+			<div id="global_layer" style="margin:3px 0px 0px 30px; float:left" hidden></div>
+			<div id="global_class" style="margin:3px 0px 0px 30px; float:left;" hidden></div>
+			<div id="global_join" style="margin:3px 30px 0px 30px; float:left;"></div>
+			<button id="global_submit" type="submit" style="margin:5px 30px 0px 10px; float:left">Set Globally</button>
+		</div>
+		<!--button type="submit" id="downloadCSV" style="margin:10px 0px 10px 10px; float:right">Download CSV</button-->
+	</div>
+	<!--div id="input_selected" style=" width:1270px;background-color:transparent"></div-->
+	</section>
+	
+	<br><br>
+	<section>
+	<div class='backLayer' style=''></div>
+	<!--div id='backLayer'></div-->
+	<div id="mapContainer">
+		<div id="map0" class="mapArea"></div><div class="MapBetween"></div>
+		<div id="map1" class="mapArea"></div><div class="MapBetween"></div>
+		<div id="map2" class="mapArea"></div><div class="MapBetween"></div>
+		<div id="map3" class="mapArea"></div><div class="MapBetween"></div>
+		<div id="map4" class="mapArea"></div><div class="MapBetween"></div>
+		<div id="map5" class="mapArea"></div><div class="MapBetween"></div>
+		<div id="map6" class="mapArea">
+			<svg id="stackedAreaChart" width="500" height="300"></svg>
+		</div>
+    </div>
+	</section>
+	<br><br>     		
+
+</body>
+</html>
